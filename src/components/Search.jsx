@@ -1,9 +1,7 @@
 import React from "react";
 import "./Search.scss";
 
-const Search = props => {
-  const { handleSubmit } = props;
-
+const Search = ({ handleSubmit }) => {
   const formSubmit = e => {
     e.preventDefault();
     const inputValue = document.getElementById("search-input");

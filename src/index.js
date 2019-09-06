@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router";
 import "skeleton-css/css/normalize.css";
 import "skeleton-css/css/skeleton.css";
 import "./index.css";

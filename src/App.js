@@ -12,7 +12,7 @@ const history = createBrowserHistory();
 
 const config = {
   baseUrl: "https://api.themoviedb.org/3/search/movie",
-  api_key: "3276fa51d16eb0a7c0fcb23665588bcd",
+  api_key: "api_key=3276fa51d16eb0a7c0fcb23665588bcd",
   lang: {
     pt: "pt-BR&region=BR",
     en: "en-US&region=US"
@@ -36,13 +36,19 @@ class App extends Component {
       )
       .then(({ data: { genres } }) => this.setState({ genres }))
       .catch(err => console.error(err));
+
+    // axios
+    //   .get(
+    //     "https://api.themoviedb.org/3/movie/603/videos?api_key=3276fa51d16eb0a7c0fcb23665588bcd&language=pt-BR"
+    //   )
+    //   .then(data => console.log(data));
   }
 
   handleSubmit = keyword => {
     if (keyword !== "") {
       axios
         .get(
-          `${config.baseUrl}?api_key=${config.api_key}&query=${keyword}&language=${config.lang.en}&page=1&per_page=5`,
+          `${config.baseUrl}?${config.api_key}&query=${keyword}&language=${config.lang.en}&page=1`,
           { crossdomain: true }
         )
         .then(response =>
